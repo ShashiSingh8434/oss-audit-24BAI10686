@@ -47,16 +47,16 @@ To bridge theory with practice, the scripting part of the project focuses on app
 ```
 open-source-audit-apache/
 │
-├── Script1.sh          # System Identity Report
-├── Script2.sh          # FOSS Package Inspector
-├── Script3.sh          # Disk and Permission Auditor
-├── Script4.sh          # Log File Analyzer
-├── Script5.sh          # Open Source Manifesto Generator
-|
-├── Screenshots         # Output Screenshots folder
-├── Report              # Report of the Project
+├── Script1.sh                 # System Identity Report
+├── Script2.sh                 # FOSS Package Inspector
+├── Script3.sh                 # Disk and Permission Auditor
+├── Script4.sh                 # Log File Analyzer
+├── Script5.sh                 # Open Source Manifesto Generator
+| 
+├── Screenshots                # Output Screenshots folder
+├── The Open Source Audit      # Report of the Project
 │
-└── README.md           # Project documentation
+└── README.md                  # Project documentation
 ```
 
 ---
