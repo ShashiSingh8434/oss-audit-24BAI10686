@@ -16,17 +16,17 @@
 
 ## Project Overview
 
-This project provides a detailed audit of the **Apache HTTP Server**, one of the most widely used open-source web servers across the globe. It explores both the theoretical background and practical aspects of working with such a system.
+The objective of this research effort is to provide a comprehensive analysis of the Apache HTTP Server, one of the most used open system web servers in the world, and it will discuss both the theory behind and the practical use of such a product.
 
-The audit includes:
+The analysis will include:
 
-- The origin, development, and evolution of the Apache HTTP Server over time  
-- Its licensing model under the Apache License 2.0, along with what it allows and implies  
-- The open-source ecosystem and community that support and maintain it  
-- A comparison between Apache and proprietary web server solutions  
-- A hands-on implementation using five Linux-based Bash scripts that demonstrate key system administration concepts  
+- How Apache HTTP Server started, developed, and has developed over the years
+- What the Apache License 2.0 is and what it allows and requires
+- The open-source ecosystem and community that supports Apache HTTP Server and continues to improve it
+- How Apache compares to proprietary web server products
+- A hands-on implementation of five Linux Bash scripts that demonstrate some of the major concepts associated with systems administration.
 
-To bridge theory with practice, the scripting part of the project focuses on applying Linux command-line utilities, working with files, inspecting processes, and performing basic system auditing tasks in a real-world environment. This approach helps in building a clearer and more practical understanding of open-source system operations.
+To connect the theoretical aspects of this research with practical application, the hands-on portion (the scripting portions) of this project will focus on using Linux command-line utilities, working with files, reviewing processes, and performing basic auditing tasks in a practical setting. This will lead to a better and more practical understanding of how open source systems operate.
 
 ---
 
@@ -44,21 +44,29 @@ To bridge theory with practice, the scripting part of the project focuses on app
 
 ## Project Structure
 
-```
-open-source-audit-apache/
-│
-├── Script1.sh                 # System Identity Report
-├── Script2.sh                 # FOSS Package Inspector
-├── Script3.sh                 # Disk and Permission Auditor
-├── Script4.sh                 # Log File Analyzer
-├── Script5.sh                 # Open Source Manifesto Generator
-| 
-├── Screenshots                # Output Screenshots folder
-├── The Open Source Audit      # Report of the Project
-│
-└── README.md                  # Project documentation
-```
+``` open-source-audit-apache/
 
+│
+
+├── Script1.sh                 # System Identity Report
+
+├── Script2.sh                 # Check FOSS packages
+
+├── Script3.sh                 # Check disk and permissions
+
+├── Script4.sh                 # Analyze log files
+
+├── Script5.sh                 # Generate Open Source Manifesto
+
+├── Screenshots                # Folder for output screenshots
+
+├── The Open Source Audit      # Project report
+
+│
+
+└── README.md                  # Documentation, for the project
+
+```
 ---
 
 ## Setup Instructions
@@ -103,19 +111,25 @@ chmod +x Script1.sh Script2.sh Script3.sh Script4.sh Script5.sh
 | `Script4.sh` | `./Script4.sh /var/log/apache2/error.log error`|
 | `Script5.sh` | `./Script5.sh`                                 |
 
-> **Note:** `script4.sh` requires two arguments — the path to a log file and a keyword to search for. The keyword defaults to `error` if not provided.
+> **Note:** The script4.sh file needs two things to work. It needs to know where to find a log file. What word you want it to look for. If you do not tell it what word to look for it will look for the word error, by default.
 
 ---
 
 ## Script Descriptions
 
 | Script       | Title                        | Description                                                                                                  |
+
 |--------------|------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `Script1.sh` | System Identity Report       | Displays key system information including kernel version, logged-in user, distro name, uptime, and date/time. |
-| `Script2.sh` | FOSS Package Inspector       | Checks whether `apache2` is installed using `dpkg`, displays package details, and uses a `case` statement to print a philosophy note about the package. |
-| `Script3.sh` | Disk and Permission Auditor  | Iterates over a predefined list of system directories, reporting their permissions, ownership, and disk usage. Also checks for the Apache configuration directory. |
-| `Script4.sh` | Log File Analyzer            | Accepts a log file path and keyword as arguments, counts keyword occurrences line by line using a `while` loop, and displays the last five matching lines. |
-| `Script5.sh` | Open Source Manifesto Generator | Prompts the user for three inputs, collects system metadata, and generates a personalized open-source manifesto saved to a `.txt` file. |
+
+| `Script1.sh` | System Identity Report       | This script shows system information. It includes the kernel version, the user who is logged in the name of the operating system how long the system has been running and the current date and time. |
+
+| `Script2.sh` | FOSS Package Inspector       | The `Script2.sh` script checks if `apache2` is installed on the system using `dpkg`. It then shows details about the package. Uses a `case` statement to print a note about what the package is all about. |
+
+| `Script3.sh` | Disk and Permission Auditor  | The `Script3.sh` script goes through a list of system directories that we have already chosen. For each directory it reports what permissions it has, who owns it and how disk space it is using. It also checks if the directory for Apache configuration is there. |
+
+| `Script4.sh` | Log File Analyzer            | The `Script4.sh` script asks for a log file and a keyword. It then counts how times the keyword appears in the log file, line by line using a `while` loop. Finally it shows the five lines where the keyword was found. |
+
+`Script5.sh` | Open Source Manifesto Generator | The `Script5.sh` script asks the user for three things. It collects some information about the system. Then generates a special open-source manifesto just for the user. This manifesto is saved in a file. The `Script5.sh` script is, about creating this personalized manifesto. |
 
 ---
 
@@ -131,36 +145,54 @@ chmod +x Script1.sh Script2.sh Script3.sh Script4.sh Script5.sh
 
 ## Concepts Used
 
-The set of five shell scripts demonstrates a range of core Linux and shell scripting concepts in a practical and hands-on manner:
+The set of five shell scripts shows how to use core Linux and shell scripting concepts.
 
-- **Variables** are used throughout, including both user-defined values and system-generated ones such as `$(whoami)` and `$(uname -r)`.  
-- **User Input** is handled interactively using `read -p`, allowing the scripts to respond dynamically based on user input.  
-- **Conditional Statements** (`if-else`) are applied to evaluate conditions like file existence or checking if a package is installed.  
-- **Case Statements** are used to manage multiple conditions efficiently, particularly when dealing with different package options.  
-- **Loops** are utilized effectively, with `for` loops iterating over arrays and `while` loops processing file content line by line.  
-- **Command-line Arguments** are supported using positional parameters like `$1` and `$2`, with fallback default values when arguments are not provided.  
-- **File Handling (I/O)** includes reading files safely using `IFS= read -r` and writing output using redirection (`>`).  
-- **Text Processing Tools** such as `grep`, `awk`, `cut`, `tail`, and `tr` are used for filtering, extracting, and transforming data.  
-- **System Commands** like `du`, `ls -ld`, `dpkg`, `date`, `uptime`, and `uname` are integrated to interact with and retrieve system-level information.  
-- **Exit Codes** (`exit 1`) are implemented for proper error handling and controlled termination of scripts.  
-- **Retry Mechanism** is introduced by rechecking conditions after a delay using `sleep`, improving script reliability.  
+- **Variables** are used everywhere. They can be defined by the user like when you set a name or generated by the system, such as `$(whoami)`. $(Uname -r)`. You use **Variables** to store and use values.
+
+- The scripts handle **User Input**. They use `read -p` to get input from you and then respond based on what you say. **User Input** helps the scripts make decisions.
+
+- **Conditional Statements** like `if-else` are used to check things. For example they check if a file exists or if a package is installed. You need **Conditional Statements** to make choices.
+
+- The scripts use **Case Statements** to handle conditions at once. This is really helpful when dealing with package options. **Case Statements** make it easy to manage choices.
+
+- **Loops** are used in ways. There are `for` loops that go through lists and `while` loops that go through files line by line. You use **Loops** to repeat tasks.
+
+- The scripts support **Command-line Arguments**. They use things like `$1` and `$2`. If you do not give any arguments they have default values. **Command-line Arguments** let you customize the script.
+
+- **File Handling** includes reading files. The scripts use `IFS= read -r` to read files. They also write output with redirection (`>`). You need **File Handling** to work with files.
+
+- The scripts use **Text Processing Tools** like `grep` `awk` `cut` `tail` and `tr`. These tools help filter, get and change data. **Text Processing Tools** are useful, for working with text.
+
+- They use **System Commands** like `du` `-ld` `dpkg` `date` `uptime` and `uname`. These commands help interact with the system and get information. **System Commands** give you system details.
+
+- The scripts use **Exit Codes** like `exit 1`. They handle errors. Stop the script in a controlled way. **Exit Codes** help manage errors.
+
+- They also have a *Retry Mechanism**. It checks again after a delay using `sleep`. This makes the scripts more reliable. The **Retry Mechanism** helps fix problems.
 
 ---
 
 ## Notes
 
-- All scripts are written for **Linux environments only**. They will not run natively on Windows or macOS without a compatibility layer.
-- Scripts must be granted execute permission before running (`chmod +x <script>`).
-- `Script4.sh` requires a valid, readable log file as its first argument. An appropriate test file is `/var/log/syslog` on Ubuntu or `/var/log/kern.log` on Kali Linux.
-- `Script3.sh` reads system directories that may require elevated permissions for accurate size reporting. Run with `sudo` if size values appear incomplete.
-- The manifesto file generated by `Script5.sh` is saved in the current working directory as `manifesto_<username>.txt`.
+- All scripts are written for Linux environments only. They will not work on Windows or macOS without a layer.
+
+- You need to make scripts executable before running them. Use `chmod +x <script>` to do this.
+
+- `Script4.sh` needs a log file as its argument. You can use `/var/log/syslog` on Ubuntu or `/var/log/kern.log` on Kali Linux for testing.
+
+- `Script3.sh` reads system directories. If size values look incomplete run it with `sudo` because it may need permissions.
+
+- `Script5.sh` creates a manifesto file in your current directory. The file is named `manifesto_<username>.txt`.
 
 ---
 
 ## Conclusion
 
-This project demonstrates a practical understanding of open-source principles through the lens of the Apache HTTP Server — a cornerstone of the open web. The scripting assignments reinforce foundational Linux administration skills and reflect the values central to open-source culture: transparency, collaboration, and freedom to inspect and modify software. Together, the theoretical audit and practical scripts form a complete study of open-source software in a real-world context.
+In this project, the Apache HTTP Server — one of the foundational elements of an open web — will be used as an example to demonstrate a working knowledge of what open-source means or represents.
+
+The scripting part of the assignment is meant to build on basic Linux administration skills and represent some of the values that are at the heart of an open-source culture — such as being transparent, working together, and being free to look at and change the code.
+
+The theoretical analysis and practical scripting components together provide a comprehensive study of real-world open-source software. 
 
 ---
 
-*Submitted as part of the Open Source Software course assignment.*
+*This work is being submitted as an element of the Open Source Software course assignment.*
