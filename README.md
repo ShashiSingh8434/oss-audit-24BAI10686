@@ -118,18 +118,12 @@ chmod +x Script1.sh Script2.sh Script3.sh Script4.sh Script5.sh
 ## Script Descriptions
 
 | Script       | Title                        | Description                                                                                                  |
-
 |--------------|------------------------------|--------------------------------------------------------------------------------------------------------------|
-
-| `Script1.sh` | System Identity Report       | This script shows system information. It includes the kernel version, the user who is logged in the name of the operating system how long the system has been running and the current date and time. |
-
+| `Script1.sh` | System Identity Report | This script shows system information. It includes the kernel version, the user who is logged in the name of the operating system how long the system has been running and the current date and time. |
 | `Script2.sh` | FOSS Package Inspector       | The `Script2.sh` script checks if `apache2` is installed on the system using `dpkg`. It then shows details about the package. Uses a `case` statement to print a note about what the package is all about. |
-
 | `Script3.sh` | Disk and Permission Auditor  | The `Script3.sh` script goes through a list of system directories that we have already chosen. For each directory it reports what permissions it has, who owns it and how disk space it is using. It also checks if the directory for Apache configuration is there. |
-
 | `Script4.sh` | Log File Analyzer            | The `Script4.sh` script asks for a log file and a keyword. It then counts how times the keyword appears in the log file, line by line using a `while` loop. Finally it shows the five lines where the keyword was found. |
-
-`Script5.sh` | Open Source Manifesto Generator | The `Script5.sh` script asks the user for three things. It collects some information about the system. Then generates a special open-source manifesto just for the user. This manifesto is saved in a file. The `Script5.sh` script is, about creating this personalized manifesto. |
+|`Script5.sh` | Open Source Manifesto Generator | The `Script5.sh` script asks the user for three things. It collects some information about the system. Then generates a special open-source manifesto just for the user. This manifesto is saved in a file. The `Script5.sh` script is, about creating this personalized manifesto. |
 
 ---
 
